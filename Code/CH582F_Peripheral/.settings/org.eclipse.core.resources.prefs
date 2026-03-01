@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//APP/include/peripheral.h=GBK
+encoding//APP/peripheral.c=GBK
+encoding//APP/peripheral_main.c=GBK
+encoding//HAL/MCU.c=GBK
+encoding//LIB/CH58xBLE_LIB.h=UTF-8
+encoding//Profile/devinfoservice.c=GBK
+encoding//SRC/Ld/Link.ld=GBK
+encoding//SRC/Startup/startup_CH583.S=GBK
+encoding//SRC/StdPeriphDriver/inc/CH583SFR.h=GBK
+encoding//SRC/StdPeriphDriver/inc/CH58x_common.h=GBK
