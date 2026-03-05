@@ -17,6 +17,7 @@
  * INCLUDES
  */
 #include "CONFIG.h"
+#include "HAL.h"
 #include "devinfoservice.h"
 #include "gattprofile.h"
 #include "peripheral.h"
@@ -593,10 +594,12 @@ static void peripheralStateNotificationCB(gapRole_States_t newState, gapRoleEven
                 Peripheral_LinkTerminated(pEvent);
                 PRINT("Disconnected.. Reason:%x\n", pEvent->linkTerminate.reason);
                 PRINT("Advertising..\n");
+                HalLedSet(HAL_LED_2, HAL_LED_MODE_BLINK);  // LED2 blinking when advertising
             }
             else if(pEvent->gap.opcode == GAP_MAKE_DISCOVERABLE_DONE_EVENT)
             {
                 PRINT("Advertising..\n");
+                HalLedSet(HAL_LED_2, HAL_LED_MODE_BLINK);  // LED2 blinking when advertising
             }
             break;
 
@@ -605,6 +608,7 @@ static void peripheralStateNotificationCB(gapRole_States_t newState, gapRoleEven
             {
                 Peripheral_LinkEstablished(pEvent);
                 PRINT("Connected..\n");
+                HalLedSet(HAL_LED_2, HAL_LED_MODE_OFF);  // LED2 off when connected
             }
             break;
 
@@ -619,11 +623,13 @@ static void peripheralStateNotificationCB(gapRole_States_t newState, gapRoleEven
             if(pEvent->gap.opcode == GAP_END_DISCOVERABLE_DONE_EVENT)
             {
                 PRINT("Waiting for advertising..\n");
+                HalLedSet(HAL_LED_2, HAL_LED_MODE_BLINK);  // LED2 blinking when waiting
             }
             else if(pEvent->gap.opcode == GAP_LINK_TERMINATED_EVENT)
             {
                 Peripheral_LinkTerminated(pEvent);
                 PRINT("Disconnected.. Reason:%x\n", pEvent->linkTerminate.reason);
+                HalLedSet(HAL_LED_2, HAL_LED_MODE_BLINK);  // LED2 blinking when disconnected
             }
             else if(pEvent->gap.opcode == GAP_LINK_ESTABLISHED_EVENT)
             {

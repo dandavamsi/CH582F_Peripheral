@@ -43,9 +43,7 @@
 				"post_script": "",
 				"post_script_description": "",
 				"excludeResources": [
-					"${project}/HAL/Profile",
-					"${project}/HAL/KEY.c",
-					"${project}/HAL/LED.c"
+					"${project}/HAL/Profile"
 				],
 				"optimization": {
 					"level": "size",

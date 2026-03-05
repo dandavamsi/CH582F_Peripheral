@@ -278,7 +278,7 @@
             </toolChain>
           </folderInfo>
           <sourceEntries>
-            <entry excluding="HAL/Profile|HAL/KEY.c|HAL/LED.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+            <entry excluding="HAL/Profile" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
           </sourceEntries>
         </configuration>
       </storageModule>
