@@ -734,7 +734,15 @@ static void simpleProfileChangeCB(uint8_t paramID, uint8_t *pValue, uint16_t len
         {
             uint8_t newValue[SIMPLEPROFILE_CHAR3_LEN];
             tmos_memcpy(newValue, pValue, len);
-            PRINT("profile ChangeCB CHAR3..\n");
+            PRINT("profile ChangeCB CHAR3: len:%d char:%c\n",SIMPLEPROFILE_CHAR3_LEN, (char)newValue[0]);
+            if(newValue[0] == 'A' || newValue[0] == 'a')
+            {
+                HalLedSet(HAL_LED_2, HAL_LED_MODE_ON);
+            }
+            else
+            {
+                HalLedSet(HAL_LED_2, HAL_LED_MODE_OFF);
+            }
             break;
         }
 

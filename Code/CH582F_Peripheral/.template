@@ -11,10 +11,10 @@ Description===
 ArtifactType=executable
 Mcu Type=CH58x
 Address=0x00000000
-Target Path=obj\CH582F_Peripheral.hex
+Target Path=D:\WCH\WCH_GIT\Test_ch582f\CH582F_Peripheral\Code\CH582F_Peripheral\obj\CH582F_Peripheral.hex
 Exe Path=
 Exe Arguments=
-CLKSpeed=2
+CLKSpeed=1
 DebugInterfaceMode=0
 Erase All=true
 Program=true

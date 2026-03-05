@@ -338,8 +338,8 @@
 	"flashConfig": {
 		"mcutype": "CH58x",
 		"address": "0x00000000",
-		"target_path": "obj\\CH582F_Peripheral.hex",
-		"clkSpeed": "Middle",
+		"target_path": "D:\\WCH\\WCH_GIT\\Test_ch582f\\CH582F_Peripheral\\Code\\CH582F_Peripheral\\obj\\CH582F_Peripheral.hex",
+		"clkSpeed": "High",
 		"debug_interface_mode": "",
 		"erase": true,
 		"program": true,

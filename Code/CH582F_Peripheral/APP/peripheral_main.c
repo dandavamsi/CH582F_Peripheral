@@ -60,6 +60,8 @@ int main(void)
     GPIOA_ModeCfg(GPIO_Pin_All, GPIO_ModeIN_PU);
     GPIOB_ModeCfg(GPIO_Pin_All, GPIO_ModeIN_PU);
 #endif
+    // Enable internal pullup for PB23 (nRST pin)
+    //R32_PB_PU |= BV(23);
 #ifdef DEBUG
     GPIOA_SetBits(bTXD1);
     GPIOA_ModeCfg(bTXD1, GPIO_ModeOut_PP_5mA);
@@ -68,6 +70,14 @@ int main(void)
     PRINT("%s\n", VER_LIB);
     CH58X_BLEInit();
     HAL_Init();
+
+    // Note: UserOptionByteConfig(ENABLE, ENABLE, DISABLE, 0) + UserOptionByte_Active()
+    // should only be called ONCE during initial setup to enable nRST.
+    // They cause an immediate chip reset, so do not call during normal startup.
+    // If nRST is not working, uncomment below one time, flash, then comment back out:
+    // UserOptionByteConfig(ENABLE, ENABLE, DISABLE, 0);
+    // UserOptionByte_Active();
+
     GAPRole_PeripheralInit();
     Peripheral_Init();
 
